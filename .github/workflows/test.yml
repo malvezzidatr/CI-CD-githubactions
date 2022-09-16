@@ -3,7 +3,7 @@ name: PR - Teste com Jest
 on:
   push:
     branches:
-      - main
+      - master
       - develop
   jobs:
     publish:
