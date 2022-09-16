@@ -5,14 +5,14 @@ on:
     branches:
       - master
       - develop
-  jobs:
-    publish:
-      name: Teste
-      runs-on: ubuntu-latest
-      steps:
-        - uses: actions/checkout@v2
-        - uses: actions/setup-node@v2
-          with:
-            node-version: 14.x
-        - run: yarn
-        - run: yarn test
+jobs:
+  publish:
+    name: Teste
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 14.x
+      - run: yarn
+      - run: yarn test
