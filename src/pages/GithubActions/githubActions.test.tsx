@@ -6,6 +6,6 @@ import {GithubActions} from '.';
 it('check if text exits on screen', () => {
   const {getByText} = render(<GithubActions />);
 
-  const text = getByText('Github ion');
+  const text = getByText('Github Action');
   expect(text).toBeTruthy();
 });
