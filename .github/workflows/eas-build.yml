@@ -3,17 +3,18 @@ name: Build APK
 on:
   push:
     branches:
-      - main
-
+      - master
 jobs:
   publish:
-    name: Install and build
+    name: Generating build
     runs-on: ubuntu-latest
     steps:
       - user: actions/checkout@v2
       - uses: actions/setup-node@v2
         with:
           node-version: 16.x
+      - run: yarn
+      - run: yarn test
       - name: Setup Expo and EAS
         user: expo/expo-github-actions@v7
         with:
@@ -21,6 +22,5 @@ jobs:
           eas-version: latest
           token: ${{ secrets.EAS_BUILD }}
       - name: Install dependencies
-        run: yarn install
       - name: Build on EAS
-        run: eas build --platform android --profile development
+      - run: eas build --platform android --profile development
