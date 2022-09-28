@@ -9,10 +9,20 @@ jobs:
     name: Generating build
     runs-on: ubuntu-latest
     steps:
-      - name: Jest
+
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
         with:
           node-version: 16.x
+      - name: Jest
       - run: yarn
       - run: yarn test
+      - name: Setup Expo and EAS
+      - uses: expo/expo-github-actions@v7
+        with:
+          expo-version: 5.x
+          eas-version: latest
+          token: ${{ secrets.EAS_BUILD }}
+      - name: Install dependencies
+      - name: Build on EAS
+      - run: eas build --platform android --profile development
