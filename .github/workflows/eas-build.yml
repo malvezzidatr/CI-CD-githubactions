@@ -1,8 +1,8 @@
 name: Build APK
 on:
-  push:
-    branches:
-      - master
+  	push:
+    	branches:
+      	- master
 jobs:
   publish:
     name: install and build
