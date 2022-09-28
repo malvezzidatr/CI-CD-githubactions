@@ -19,5 +19,7 @@ jobs:
           token: ${{ secrets.EAS_BUILD }}
       - name: install dependencies
         run: yarn install
+      - name: login in expo account
+        run: login -u malvezzidatr  -p c010203684
       - name: build on EAS
         run: eas build -p android --profile development
