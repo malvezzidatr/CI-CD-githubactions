@@ -15,8 +15,8 @@ jobs:
         with:
           node-version: 16.x
       - name: Jest
-      - run: yarn
-      - run: yarn test
+        run: yarn
+        run: yarn test
       - name: Setup Expo and EAS
       - uses: expo/expo-github-actions@v7
         with:
@@ -25,4 +25,4 @@ jobs:
           token: ${{ secrets.EAS_BUILD }}
       - name: Install dependencies
       - name: Build on EAS
-      - run: eas build --platform android --profile development
+        run: eas build --platform android --profile development
