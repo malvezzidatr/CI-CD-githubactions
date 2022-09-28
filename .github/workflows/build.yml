@@ -19,3 +19,5 @@ jobs:
           token: ${{ secrets.EAS_BUILD }}
       - name: install dependencies
         run: yarn install
+      - name: build on EAS
+        run: eas build -p android --profile development
