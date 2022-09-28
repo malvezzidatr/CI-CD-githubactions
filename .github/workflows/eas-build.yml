@@ -13,6 +13,5 @@ jobs:
         with:
           node-version: 16.x
       - name: Jest
-        run: yarn
-        run: yarn test
+        run: yarn && yarn test
     
