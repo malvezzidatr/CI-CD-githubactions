@@ -11,3 +11,9 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: 16.x
+      - name: setup expo and eas
+        uses: expo/expo-github-action@v7
+        with:
+          expo-version: 5.x
+          eas-version: latest
+          token: ${{ secrets.EAS_BUILD }}
