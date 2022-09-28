@@ -9,14 +9,14 @@ jobs:
     name: Generating build
     runs-on: ubuntu-latest
     steps:
-      - user: actions/checkout@v2
+      - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
         with:
           node-version: 16.x
       - run: yarn
       - run: yarn test
       - name: Setup Expo and EAS
-        user: expo/expo-github-actions@v7
+        uses: expo/expo-github-actions@v7
         with:
           expo-version: 5.x
           eas-version: latest
