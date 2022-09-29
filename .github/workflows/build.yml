@@ -23,8 +23,8 @@ jobs:
         run: yarn test
       - name: login in expo account
         env:
-          USERNAME: malvezzidatr
-          PASSWORD: c010203684
-        run: expo login -u ${{ env.USERNAME }} -p ${{ env.PASSWORD }}
+          USERNAME: ${{ secrets.USERNAME }}
+          PASSWORD: ${{ secrets.PASSWORD }}
+        run: expo login -u $USERNAME -p $PASSWORD
       - name: build on EAS
         run: eas build -p android --profile development
